@@ -1,5 +1,6 @@
 package fr.afpa.cda.cours.heritage;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Personne {
@@ -14,10 +15,22 @@ public class Personne {
 	
 	private String nom ;
 	private String prenom ;
-	private Date dateDeNaissance;
+	private LocalDate dateDeNaissance;
 	private char sexe ;
-	private int cin ;
+	private int cin ; // carte identite nationale
 	
+	
+	
+	
+	
+	public Personne(String nom, String prenom, LocalDate dateDeNaissance, char sexe, int cin) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.dateDeNaissance = dateDeNaissance;
+		this.sexe = sexe;
+		this.cin = cin;
+	}
 	public Personne(String nom, int cin) {
 		this.nom = nom;
 		this.cin = cin;
@@ -40,15 +53,14 @@ public class Personne {
 	}; 
 	public  void ecrire() {
 		System.out.println("Je suis un humain qui ecrire !!");
-	} ;
-	
-	
-	
-	
+	}
 	@Override
 	public String toString() {
-		return "nom=" + nom + ", cin=" + cin ;
-	}
+		return "nom=" + nom + ", prenom=" + prenom + ", dateDeNaissance=" + dateDeNaissance + ", sexe=" + sexe
+				+ ", cin=" + cin ;
+	} ;
+	
+
 	
 	
 	
